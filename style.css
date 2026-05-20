@@ -1,0 +1,77 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow:hidden;
+  font-family:Arial, sans-serif;
+  background:#020814;
+}
+
+.arka{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background:
+  radial-gradient(circle at center,
+  #0a2a5e 0%,
+  #020814 70%);
+}
+
+/* canvas */
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+/* center text */
+.content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  z-index:2;
+}
+
+.content h1{
+  color:#b3e5ff;
+  font-size:70px;
+  letter-spacing:12px;
+  text-shadow:0 0 20px rgba(100,200,255,0.8);
+}
+
+.content p{
+  margin-top:10px;
+  color:#7fcfff;
+  letter-spacing:4px;
+  opacity:0.7;
+}
+
+/* glowing atmosphere */
+.arka::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:
+  radial-gradient(circle,
+  rgba(0,150,255,0.15),
+  transparent 60%);
+  animation:pulse 6s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(1);
+    opacity:0.5;
+  }
+
+  50%{
+    transform:scale(1.2);
+    opacity:1;
+  }
+}
