@@ -1,52 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITHOR - ARKA</title>
+  <title>ITHOR</title>
 
   <style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
     body{
+      margin:0;
       overflow:hidden;
-      font-family:Arial,sans-serif;
-      background:#020814;
-    }
-
-    .arka{
-      position:relative;
-      width:100vw;
-      height:100vh;
-
+      background:black;
       display:flex;
       justify-content:center;
       align-items:center;
-
-      background:
-      radial-gradient(circle at center,
-      #0a2a5e 0%,
-      #020814 70%);
-    }
-
-    h1{
-      color:#b3e5ff;
+      height:100vh;
+      color:cyan;
       font-size:70px;
-      letter-spacing:12px;
-      text-shadow:0 0 20px rgba(100,200,255,0.8);
-      z-index:2;
-    }
-
-    canvas{
-      position:absolute;
-      top:0;
-      left:0;
+      font-family:Arial;
     }
 
   </style>
@@ -55,86 +25,8 @@
 
 <body>
 
-<div class="arka">
-
-  <canvas id="canvas"></canvas>
-
-  <h1>ARKA</h1>
-
-</div>
-
-<script>
-
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-class Particle{
-
-  constructor(x,y){
-
-    this.x = x;
-    this.y = y;
-
-    this.size = Math.random()*3+1;
-
-    this.speedX = (Math.random()-0.5)*1;
-    this.speedY = (Math.random()-0.5)*1;
-  }
-
-  update(){
-
-    this.x += this.speedX;
-    this.y += this.speedY;
-
-    this.speedX *= 0.99;
-    this.speedY *= 0.99;
-  }
-
-  draw(){
-
-    ctx.fillStyle = "rgba(120,200,255,0.7)";
-
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-    ctx.fill();
-  }
-
-}
-
-window.addEventListener("mousemove",(e)=>{
-
-  for(let i=0;i<5;i++){
-
-    particles.push(new Particle(e.x,e.y));
-
-  }
-
-});
-
-function animate(){
-
-  ctx.fillStyle = "rgba(2,8,20,0.15)";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-
-  particles.forEach((particle)=>{
-
-    particle.update();
-    particle.draw();
-
-  });
-
-  requestAnimationFrame(animate);
-
-}
-
-animate();
-
-</script>
+ARKA 🌊
 
 </body>
-  </html>
+
+</html>
